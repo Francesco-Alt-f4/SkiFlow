@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyFlow // Dashboard Meteo Futura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="weather-container">
+        <header class="search-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" id="city-input" placeholder="Cerca una città (es. Milano)..." autocomplete="off">
+            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </header>
+
+        <div id="info-message" class="info-message">Rilevamento della posizione...</div>
+
+        <main id="weather-body" class="weather-body hidden">
+            
+            <section class="main-info">
+                <h1 id="city-name">--</h1>
+                <p id="current-date">--</p>
+                <div class="weather-visual">
+                    <i id="weather-icon" class="fa-solid fa-cloud-sun"></i>
+                    <span id="temperature">--</span>
+                </div>
+                <p id="weather-desc">--</p>
+            </section>
+
+            <section class="details-grid">
+                
+                <div class="detail-card">
+                    <div class="card-icon term"><i class="fa-solid fa-temperature-half"></i></div>
+                    <div class="card-data">
+                        <h3>Percepita</h3>
+                        <p id="feels-like">--</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="card-icon hum"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card-data">
+                        <h3>Umidità</h3>
+                        <p id="humidity">--</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="card-icon wind"><i class="fa-solid fa-wind"></i></div>
+                    <div class="card-data">
+                        <h3>Vento</h3>
+                        <p id="wind-speed">--</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="card-icon uv"><i class="fa-solid fa-sun"></i></div>
+                    <div class="card-data">
+                        <h3>Indice UV</h3>
+                        <p id="uv-index">--</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="card-icon press"><i class="fa-solid fa-gauge"></i></div>
+                    <div class="card-data">
+                        <h3>Pressione</h3>
+                        <p id="pressure">--</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="card-icon eye"><i class="fa-solid fa-eye"></i></div>
+                    <div class="card-data">
+                        <h3>Visibilità</h3>
+                        <p id="visibility">--</p>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

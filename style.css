@@ -1,0 +1,208 @@
+/* Reset Reset e Variabili di Design */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Glassmorphism Container */
+.weather-container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    padding: 35px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Barra di Ricerca */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 4px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.search-box i {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.1rem;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+    font-weight: 400;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 8px;
+    transition: transform 0.2s ease;
+}
+
+.search-box button:hover {
+    transform: scale(1.15);
+}
+
+/* Messaggi di Feedback e Stati */
+.info-message {
+    text-align: center;
+    padding: 40px 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Sezione Info Principali */
+.main-info {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.main-info h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.main-info p#current-date {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.weather-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.weather-visual i {
+    font-size: 4.5rem;
+    filter: drop-shadow(0 10px 15px rgba(255, 255, 255, 0.15));
+}
+
+.weather-visual span {
+    font-size: 4.8rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+#weather-desc {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Griglia delle Schede Avanzate */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.detail-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Stilizzazione Icone Neon delle schede */
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.card-icon.term { color: #ff7675; }
+.card-icon.hum { color: #74b9ff; }
+.card-icon.wind { color: #81ecec; }
+.card-icon.uv { color: #ffeaa7; }
+.card-icon.press { color: #a29bfe; }
+.card-icon.eye { color: #55efc4; }
+
+/* Testi interni alle schede */
+.card-data h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 500;
+}
+
+.card-data p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 2px;
+}
+
+/* Classi di Controllo Javascript */
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 400px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    .weather-container {
+        padding: 20px;
+    }
+}
